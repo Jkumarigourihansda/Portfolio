@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            padding: 0;
+            margin: 0;
+            background-image: url("Assets/image/the4.png");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-repeat: no-repeat;
+        }
+        .nav-link {
+            color: white;
+        }
+        .nav-link:hover {
+            color: gray;
+        }
+        .hero {
+            background-image: url("assets/image/the5.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            animation: fadeIn 2s;
+        }
+        .section {
+            padding: 50px;
+            background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            animation: slideInUp 1s;
+        }
+        .section-heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+        .project {
+            background-image: url("Assets/image/the4.png");
+            background-color: #304352;
+            padding: 20px;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideInLeft 1s;
+        }
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .contact-modal {
+            background-image: url("Assets/image/the5.jpg");
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .skill-logo {
+            width: 48px;
+            height: 48px;
+            margin: 20px;
+        }
+        #about {
+            text-align: center;
+        }
+        #about p {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+        .skill-item {
+            text-align: center;
+            animation: zoomIn 1s;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-button {
+            background-color: #2580B3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+        .contact-button:hover {
+            background-color: #884D80;
+        }
+        .devops-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+        .devops-item {
+            text-align: center;
+        }
+        .devops-logo {
+            width: 48px;
+            height: 48px;
+            margin: 20px;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-link {
+            margin: 10px;
+            font-size: 24px;
+        }
+        .social-link:hover {
+            color: gray;
+        }
+        .down-bar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #444;
+            animation: slideInUp 1s;
+        }
+        .down-bar a {
+            text-decoration: none;
+            color: white;
+        }
+        .down-bar a:hover {
+            color: gray;
+        }
+        .social-icon {
+            font-size: 16px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top animate__animated animate__slideInDown">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-code-slash" style="font-size: 1.5rem; margin-right: 10px;"></i>Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Web Developer</h1>
+            <p>Passionate about building scalable and efficient web applications</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Get in Touch</button>
+        </div>
+        
+    </section>
+    <section id="about" class="section animate__animated animate__slideInUp">
+        <div class="container">
+            <h2 class="section-heading">About Me</h2>
+            <p>Hi, I’m Gouri, a passionate and detail-oriented Web Developer and Designer with a knack for creating visually stunning, user-friendly, and highly functional digital experiences. With a strong foundation in both front-end and back-end development, I specialize in turning ideas into fully functional websites and applications that not only look great but also perform seamlessly..</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#learnMoreModal">Learn More</button>
+        </div>
+    </section>
+    <section id="skills" class="section animate__animated animate__slideInUp">
+        <div class="container">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5 Logo">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3 Logo">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Logo">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React Logo">
+                    <p>React</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular Logo">
+                    <p>Angular</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js Logo">
+                    <p>Node.js</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express Logo">
+                    <p>Express</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB Logo">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python Logo">
+                    <p>Python</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java Logo">
+                    <p>Java</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1024px-Microsoft_Azure.svg.png" alt="Azure Logo">
+                    <p>Azure</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud Logo">
+                    <p>Google Cloud</p>
+                </div>
+                <div class="skill-item animate__animated animate__zoomIn">
+                    <img class="skill-logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git Logo">
+                    <p>Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section animate__animated animate__slideInUp">
+        <div class="container">
+            <h2 class="section-heading">Projects</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/Ecom.jpg" alt="">
+                        <h3>E-commerce websites</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/news.jpg" alt="">
+                        <h3>News website</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/car.jpg" alt="">
+                        <h3>Car Racing Game</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/images (1).jpg" alt="">
+                        <h3>Temperature converter</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/website-blog.jpg" alt="">
+                        <h3>Blogging websites</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/apps.webp" alt="">
+                        <h3>Suduko Game</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/images.jpg" alt="">
+                        <h3>Task Management App</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="project animate__animated animate__slideInLeft">
+                        <img src="Assets/image/chat.avif" alt="">
+                        <h3>Chatbot</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="section animate__animated animate__slideInUp">
+        <div class="container">
+            <h2 class="section-heading">Education</h2>
+            <ul>
+                <li>B.Tech Computer science and engineering at Quantum University</li>
+              <li>Computer science at Baldwin Farm Area High School</li>
+            </ul>
+        </div>
+    </section>
+    <section id="contact" class="section animate__animated animate__slideInUp">
+        <div class="container">
+            <h2 class="section-heading">Contact</h2>
+            <div class="contact-info">
+                <p>Phone: +91-950-8651-514</p>
+                <p>Email: <a href="kumarigourihansda632@gmail.com" style="color: white;">kumarigourihansda632@gmail.com</a></p>
+                <button class="contact-button animate__animated animate__pulse" data-bs-toggle="modal" data-bs-target="#contactModal">Get in Touch</button>
+            </div>
+        </div>
+    </section>
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content contact-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message:</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="form-status" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content contact-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="learnMoreModalLabel">Learn More</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p><b>What I Do:</b><br><br>
+                      <p><b>Design:</b> I craft clean, modern, and responsive designs that prioritize user experience (UX) and accessibility. From wireframes to high-fidelity prototypes, I ensure every pixel is in place.<br><br></p>
+
+                    <p><b>Development:</b> I bring designs to life using the latest web technologies, including HTML, CSS, JavaScript, and frameworks like React, Vue.js, or Angular. I also have experience with back-end development using Node.js, Python, or PHP, and databases like MySQL or MongoDB.<br><br></p>
+
+                    <p><b>Responsive Design:</b> I build websites that look and work flawlessly across all devices, ensuring a consistent experience for every user.<br><br></p>
+
+                  <p><b>Optimization:</b> I focus on performance optimization, ensuring fast load times, smooth animations, and SEO-friendly structures.<br></p>
+
+          <p><b>Collaboration:</b> I thrive in team environments, working closely with clients, designers, and other developers to deliver projects on time and exceed expectations.<br></p>
+
+<br>
+
+    <b>What Sets Me Apart:</b>
+User-Centric Approach: I always put the end-user first, designing and developing with their needs in mind.<br><br>
+
+    <b>Problem Solver:</b> I love tackling challenges and finding creative solutions to complex problems.
+<br>
+</p>
+                    <p>In my free time, I enjoy staying up to date with the latest developments in the field, attending conferences and meetups, and contributing to open source projects. I am also a strong believer in the importance of testing and debugging, and I make sure to thoroughly test all of my code before releasing it.</p>
+  <p><b>My Passion:</b>
+I’m driven by the desire to create meaningful digital experiences that make an impact. Whether it’s a sleek portfolio website, an e-commerce platform, or a dynamic web application, I pour my creativity and technical expertise into every project.
+
+Let’s build something amazing together! 🚀</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="down-bar animate__animated animate__slideInUp">
+        <p>
+            <a href="https://www.facebook.com/profile.php?id=100072751509606" target="_blank"><i class="bi bi-facebook social-icon"></i></a>
+            <a href="https://www.instagram.com/gourihansda__/" target="_blank"><i class="bi bi-instagram social-icon"></i></a>
+            <a href="https://github.com/Jkumarigourihansda" target="_blank"><i class="bi bi-github social-icon"></i></a>
+        </p>
+    </div>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog animate__animated animate__zoomIn">
+            <div class="modal-content contact-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Phone: +91-950-8651-514</p>
+                    <p>Email: <a href="kumarigourihansda632@gmail.com" style="color: white;">kumarigourihansda632@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    document.getElementById('form-status').innerHTML = 'Message sent successfully!';
+                } else {
+                    document.getElementById('form-status').innerHTML = 'Error sending message. Please try again later.';
+                }
+            })
+            .catch((error) => {
+                document.getElementById('form-status').innerHTML = 'Error sending message. Please try again later.';
+            });
+        });
+        
+        const hero = document.getElementById('hero');
+        const images = [
+            'https://wallpapers.com/images/high/anime-gaming-4ynjg96fpg0vxjy9.webp',
+            'https://wallpapers.com/images/high/anime-gaming-eiuudv8p8h6g9g1w.webp',
+            'https://wallpapers.com/images/high/anime-gaming-euc7otu406758i3v.webp'
+        ];
+        let currentImageIndex = 0;
+
+        function changeBackgroundImage() {
+            hero.style.backgroundImage = `url(${images[currentImageIndex]})`;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        changeBackgroundImage();
+        setInterval(changeBackgroundImage, 5000);
+    </script>
+</body>
+</html>
